@@ -3,6 +3,8 @@ import axios from 'axios';
 import { CircularProgress,Switch } from '@material-ui/core';
 import CustomerItem from '../CustomerItem/CustomerItem';
 import classes from './merchantTable.module.css';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faArrowDown, faArrowUp, faCoffee } from '@fortawesome/free-solid-svg-icons';
 
 const MerchantTable = () => {
 
@@ -60,14 +62,13 @@ const MerchantTable = () => {
                     <th>Email</th>
                     <th>Phone</th>
                     <th>Premium</th>
-                    <th>{bidValue ? 'Max' : 'Min'} bid <span style={{ fontSize: '14px', fontWeight: 'normal' }}>(Min</span><Switch
+                    <th><span style={{cursor:'pointer'}} onClick={sortingHandler}>{bidValue ? 'Max' : 'Min'} bid<span>{asc ? <FontAwesomeIcon icon={faArrowDown} /> : <FontAwesomeIcon icon={faArrowUp} />}</span></span> <span style={{ fontSize: '14px', fontWeight: 'normal' }}>  (Min</span><Switch
                         checked={bidValue}
                         onChange={bidChange}
                         color="primary"
                         name="checkedB"
                         inputProps={{ 'aria-label': 'primary checkbox' }}
                     /><span style={{ fontSize: '14px', fontWeight: 'normal' }}>Max)</span>
-                        <button onClick={sortingHandler}>{asc ? 'Des' : 'Asc'}</button>
                     </th>
                 </tr>
             </thead>
@@ -75,7 +76,6 @@ const MerchantTable = () => {
                 return <CustomerItem key={customer.id} merchant={customer} bidValue={bidValue}  />
             })}
         </table>
-            // <CustomerItem merchant={testData} bidValue={bidValue} bidChange={bidChange} asc={sortingHandler} isAsc={asc} />
         )
     }
 

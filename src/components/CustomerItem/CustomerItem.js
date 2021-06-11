@@ -16,7 +16,7 @@ const CustomerItem = props => {
     }
 
     return <tbody>
-            <tr key={props.merchant.id} onClick={customerDetailHandler}>
+            <tr key={props.merchant.id} onClick={customerDetailHandler} style={{cursor:'pointer'}}>
                 <td><span><Avatar alt="Remy Sharp" src={props.merchant.image_url} /></span><span>{props.merchant.name}</span></td>
                 <td>{props.merchant.email}</td>
                 <td>{props.merchant.phone}</td>
