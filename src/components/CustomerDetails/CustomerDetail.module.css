@@ -1,0 +1,17 @@
+.profile_pic {
+    display: flex;
+    justify-content: center;
+}
+.profile_pic img {
+    border: 1px solid #ccc;
+    padding: 5px;
+    border-radius: 50%;
+}
+.profile_detail {
+    width: 60%;
+    margin: auto;
+}
+.profile_distribution {
+    display: grid;
+    grid-template-columns: repeat(2,50%);
+}
