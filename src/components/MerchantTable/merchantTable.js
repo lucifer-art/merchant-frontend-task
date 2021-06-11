@@ -4,10 +4,10 @@ import { CircularProgress,Switch } from '@material-ui/core';
 import CustomerItem from '../CustomerItem/CustomerItem';
 import classes from './merchantTable.module.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faArrowDown, faArrowUp, faCoffee } from '@fortawesome/free-solid-svg-icons';
+import { faArrowDown, faArrowUp } from '@fortawesome/free-solid-svg-icons';
 
 const MerchantTable = () => {
-
+    
     const [merchant, setmerchant] = useState([]);
     const [bidValue, setbidValue] = useState(true);
     const [asc, setasc] = useState(false);
